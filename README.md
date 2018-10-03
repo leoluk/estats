@@ -43,4 +43,4 @@ The camera doesn't move and neither does the meter, so we can hardcode the crop 
 
 Amazingly, this returns the correct value some of the time.
 
-![demo.png]
+![demo](demo.png)
