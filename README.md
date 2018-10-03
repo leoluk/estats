@@ -4,7 +4,7 @@ I needed to automatically read an eletricity meter's value. This tends to
 be straight-forward with modern meters - most have infrared interfaces - but
 unfortunately, the only input I have in this case is an analog, low-resolution 
 wireless camera attached to a random Chinese video server. To make things worse,
-the wireless connection is noisy and the image is distorted most of the time.
+the wireless connection is noisy and the image is distorted.
 
 After a few hours of fiddling, I ended up with this ~~atrocity~~ surprisingly 
 functional hack. It was really fun figuring this out and I'm documenting it here 
@@ -36,7 +36,7 @@ GIMP, it turns out, can be automated using its embedded Python interpreter:
       "raw_filename", 0, 9, 0, 0, 0, 0, 0); pdb.gimp_quit(1)'
 
 This looks a lot better! We can then feed the output into the amazing 
-[ssocr](https://github.com/auerswal/ssocr) tool, which is a OCR tool for seven-segment displays. 
+[ssocr](https://github.com/auerswal/ssocr) tool, which is an OCR tool for seven-segment displays. 
 The camera doesn't move and neither does the meter, so we can hardcode the crop values:
 
     ssocr -d -1 -i 2 -D rotate 4 crop 130 100 85 50 pic_retinex.png
